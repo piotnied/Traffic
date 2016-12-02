@@ -21,7 +21,7 @@ public class SUV extends Vehicle {
     }
 
     public void paintMe(Graphics g) {
-        /*g.setColor(Color.GREEN);
+       /* g.setColor(Color.GREEN);
         g.fillRect(x,y,width,height);*/
         g.drawImage(myImage, x, y,null);
 

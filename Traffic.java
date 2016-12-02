@@ -16,7 +16,7 @@ public class Traffic implements ActionListener, Runnable {
     Container south = new Container();
 
     //West container
-    JButton semi = new JButton("Add Semi");
+    JButton truck = new JButton("Add Truck");
     JButton suv = new JButton("Add SUV");
     JButton sports = new JButton("Add Sports");
     Container west = new Container();
@@ -27,7 +27,7 @@ public class Traffic implements ActionListener, Runnable {
 
 
     public Traffic(){
-        frame.setSize(1000, 550);
+        frame.setSize(1000, 600);
         frame.setLayout(new BorderLayout());
         frame.add(road, BorderLayout.CENTER);
 
@@ -40,8 +40,8 @@ public class Traffic implements ActionListener, Runnable {
         frame.add(south, BorderLayout.SOUTH);
 
         west.setLayout(new GridLayout(3,1));
-        west.add(semi);
-        semi.addActionListener(this);
+        west.add(truck);
+        truck.addActionListener(this);
         west.add(suv);
         suv.addActionListener(this);
         west.add(sports);
@@ -55,7 +55,6 @@ public class Traffic implements ActionListener, Runnable {
 
     public static void main(String [] args){
         new Traffic();
-
     }
 
     @Override
@@ -71,14 +70,14 @@ public class Traffic implements ActionListener, Runnable {
         }
         if(event.getSource().equals(stop))
             running = false;
-        if(event.getSource().equals(semi)){
-            Semi semi = new Semi(0, 20);
-            road.addCar(semi);
+        if(event.getSource().equals(truck)){
+            Truck truck = new Truck(0, 20);
+            road.addCar(truck);
             for (int x = 0; x < road.ROAD_WIDTH; x = x + 20){
                 for(int y = 40; y < 480; y = y + 120){
-                    semi.setX(x);
-                    semi.setY(y);
-                    if(road.collision(x, y, semi) == false){
+                    truck.setX(x);
+                    truck.setY(y);
+                    if(road.collision(x, y, truck) == false){
                         frame.repaint();
                         return;
                     }

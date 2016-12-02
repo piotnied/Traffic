@@ -5,10 +5,10 @@ import java.io.File;
 /**
  * Created by Piotrek on 2016-12-02.
  */
-public class Semi extends Vehicle {
+public class Truck extends Vehicle {
     Image myImage;
 
-    public Semi(int newx, int newy){
+    public Truck(int newx, int newy){
         super(newx, newy);
         width = 100;
         height = 40;
@@ -24,7 +24,7 @@ public class Semi extends Vehicle {
     public void paintMe(Graphics g) {
        /* g.setColor(Color.BLUE);
         g.fillRect(x,y,width,height);*/
-       g.drawImage(myImage, x, y, null);
+        g.drawImage(myImage, x, y, null);
 
     }
 }

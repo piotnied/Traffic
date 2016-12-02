@@ -3,7 +3,7 @@ import java.awt.*;
 /**
  * Created by Piotrek on 2016-12-02.
  */
-public class Vehicle {
+public abstract class Vehicle {
     int x;
     int y;
     int width;
@@ -15,9 +15,7 @@ public class Vehicle {
         y = newy;
     }
 
-    public void paintMe(Graphics g){
-
-    }
+    public abstract void paintMe(Graphics g);
 
     public int getX(){
         return x;
