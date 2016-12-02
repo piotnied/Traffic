@@ -29,7 +29,7 @@ public class Road extends JPanel {
         g2d.setColor(Color.WHITE);
         for(int a = LANE_HEIGHT; a < LANE_HEIGHT * 4; a = a + LANE_HEIGHT){ // which lane
             for (int b = 0; b < getWidth(); b = b + 40){ // which line
-                g2d.fillRect(b, a, 30, 5);
+                g2d.fillRect(b, a, 20, 5);
             }
         }
         //Draw cars
@@ -56,7 +56,7 @@ public class Road extends JPanel {
                 if ((v.getY() > 80) && (collision(v.getX(), v.getY() - LANE_HEIGHT, v) == false)){
                         v.setY(v.getY() - LANE_HEIGHT);
                 }
-                else if((v.getY() < 80 + 3* LANE_HEIGHT) && (collision(v.getX(), v.getY() + LANE_HEIGHT, v) == false)){
+                else if((v.getY() < 80 + 3 * LANE_HEIGHT) && (collision(v.getX(), v.getY() + LANE_HEIGHT, v) == false)){
                     v.setY(v.getY() + LANE_HEIGHT);
 
                 }

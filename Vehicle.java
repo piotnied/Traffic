@@ -41,6 +41,4 @@ public abstract class Vehicle {
         return width;
     }
 
-
-
 }

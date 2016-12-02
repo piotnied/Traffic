@@ -25,9 +25,8 @@ public class Traffic implements ActionListener, Runnable {
     int carCount = 0;
     long startTime = 0;
 
-
     public Traffic(){
-        frame.setSize(1000, 600);
+        frame.setSize(800, 600);
         frame.setLayout(new BorderLayout());
         frame.add(road, BorderLayout.CENTER);
 
@@ -112,13 +111,22 @@ public class Traffic implements ActionListener, Runnable {
                 }
             }
         }
+        /*if(event.getSource().equals(light)) {
+            TrafficLight trafficLight = new TrafficLight(150, 40);
+            road.addCar(trafficLight);
+            trafficLight.status = trafficLight.status + 1;
+            if (trafficLight.status == 4) {
+                trafficLight.status = 0;
+            }
+        }*/
     }
 
     @Override
     public void run() {
-        while(running == true) {
+        while(running) {
             road.step();
             carCount = road.getCarCount();
+
             double throughputCalc = carCount / (1000 * (double)(System.currentTimeMillis() - startTime));
             throughput.setText("Throughput:" + throughputCalc);
             frame.repaint();
@@ -126,10 +134,8 @@ public class Traffic implements ActionListener, Runnable {
                 Thread.sleep(100);
             }catch (Exception ex){
                 ex.printStackTrace();
-
             }
         }
     }
-
 
 }
