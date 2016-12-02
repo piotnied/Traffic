@@ -39,7 +39,7 @@ public class TrafficLight extends JPanel implements MouseListener {
             actualRed = Color.RED;
         } else if (status == 3) {
             actualYellow = Color.YELLOW;
-            actualRed = Color.red;
+            actualRed = Color.RED;
         }
 
         // Now draw the lights once each

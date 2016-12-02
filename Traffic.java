@@ -111,14 +111,7 @@ public class Traffic implements ActionListener, Runnable {
                 }
             }
         }
-        /*if(event.getSource().equals(light)) {
-            TrafficLight trafficLight = new TrafficLight(150, 40);
-            road.addCar(trafficLight);
-            trafficLight.status = trafficLight.status + 1;
-            if (trafficLight.status == 4) {
-                trafficLight.status = 0;
-            }
-        }*/
+
     }
 
     @Override
