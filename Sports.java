@@ -22,9 +22,10 @@ public class Sports extends Vehicle{
     }
 
     public void paintMe(Graphics g) {
+        Graphics2D g2d = (Graphics2D) g;
        /* g.setColor(Color.RED);
         g.fillRect(x,y,width,height);*/
-        g.drawImage(myImage, x, y, null);
+        g2d.drawImage(myImage, x, y, null);
 
     }
 }

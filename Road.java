@@ -21,14 +21,15 @@ public class Road extends JPanel {
     }
 
     public void paintComponent(Graphics g){
-        super.paintComponent(g);
-        g.drawLine(0,0,300,500);
-        g.setColor(Color.BLACK);
-        g.fillRect(0,0, getWidth(), getHeight());
-        g.setColor(Color.WHITE);
+        Graphics2D g2d = (Graphics2D) g;
+        super.paintComponent(g2d);
+        g2d.drawLine(0,0,300,500);
+        g2d.setColor(Color.BLACK);
+        g2d.fillRect(0,0, getWidth(), getHeight());
+        g2d.setColor(Color.WHITE);
         for(int a = LANE_HEIGHT; a < LANE_HEIGHT * 4; a = a + LANE_HEIGHT){ // which lane
             for (int b = 0; b < getWidth(); b = b + 40){ // which line
-                g.fillRect(b, a, 30, 5);
+                g2d.fillRect(b, a, 30, 5);
             }
         }
         //Draw cars
