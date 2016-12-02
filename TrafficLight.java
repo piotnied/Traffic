@@ -3,19 +3,20 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
-public class TrafficLight extends JPanel implements MouseListener {
+public class TrafficLight extends JPanel /*implements MouseListener*/ {
 
-    private JPanel panel;
+    // JPanel panel;
     private int status;
     private Color offRed;
     private Color offYellow;
     private Color offGreen;
 
     public TrafficLight() {
-        panel = new JPanel(new FlowLayout());
-        panel.setSize(90, 250);
-        panel.setBackground(Color.LIGHT_GRAY);
-        addMouseListener(this);
+         // panel = new JPanel(new FlowLayout());
+        // panel.setSize(90, 250);
+        //panel.setBackground(Color.LIGHT_GRAY);
+        //addMouseListener(this);
+
         offRed = new Color(128, 0, 0);
         offYellow = new Color(192, 192, 0);
         offGreen = new Color(0, 96, 0);
@@ -25,6 +26,7 @@ public class TrafficLight extends JPanel implements MouseListener {
 
     @Override
     public void paintComponent(Graphics g) {
+        Graphics2D g2d = (Graphics2D)g;
         // Set the actual colours to the "off" shades to begin with.
         Color actualRed = offRed;
         Color actualYellow = offYellow;
@@ -43,28 +45,29 @@ public class TrafficLight extends JPanel implements MouseListener {
         }
 
         // Now draw the lights once each
-        drawLight(g, 10, actualRed);
-        drawLight(g, 90, actualYellow);
-        drawLight(g, 170, actualGreen);
+        drawLight(g2d, 10, actualRed);
+        drawLight(g2d, 20, actualYellow); //90
+        drawLight(g2d, 30, actualGreen); //170
     }
 
     private void drawLight(Graphics g, int height, Color colour) {
-        g.setColor(colour);
-        g.fillOval(10, height, 70, 70);
-        g.setColor(Color.BLACK);
-        g.drawOval(10, height, 70, 70);
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.setColor(colour);
+        g2d.fillOval(10, height, 10, 10);
+        g2d.setColor(Color.BLACK);
+        g2d.drawOval(10, height, 10, 10);
     }
 
-    @Override
+    /*@Override
     public void mouseClicked(MouseEvent event) {
         status = status + 1;
         if (status == 4) {
             status = 0;
         }
         repaint();
-    }
+    }*/
 
-    @Override
+    /*@Override
     public void mouseEntered(MouseEvent event) {
     }
 
@@ -78,9 +81,9 @@ public class TrafficLight extends JPanel implements MouseListener {
 
     @Override
     public void mouseReleased(MouseEvent event) {
-    }
+    }*/
 
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
 
         JFrame win = new JFrame("Traffic Light");
         win.setSize(130, 290);
@@ -89,6 +92,6 @@ public class TrafficLight extends JPanel implements MouseListener {
         // win.pack();
         win.setVisible(true);
 
-    }
+    }*/
 
 }

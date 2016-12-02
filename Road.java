@@ -9,7 +9,7 @@ public class Road extends JPanel {
 
     final int LANE_HEIGHT = 120;
     final int ROAD_WIDTH = 800;
-    ArrayList<Vehicle> cars = new ArrayList<>();
+    ArrayList<Vehicle> cars = new ArrayList<Vehicle>();
     int carCount = 0;
 
     public Road(){
@@ -33,10 +33,8 @@ public class Road extends JPanel {
             }
         }
         //Draw cars
-        for (int a = 0; a < cars.size(); a++){
-            cars.get(a).paintMe(g);
-
-        }
+        for (int a = 0; a < cars.size(); a++)
+            cars.get(a).paintMe(g2d);
     }
 
     public void step() {

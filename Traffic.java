@@ -8,6 +8,7 @@ public class Traffic implements ActionListener, Runnable {
 
     JFrame frame = new JFrame("Traffic simulation");
     Road road = new Road();
+    TrafficLight light = new TrafficLight();
 
     //South container
     JButton start = new JButton("Start");
@@ -29,6 +30,7 @@ public class Traffic implements ActionListener, Runnable {
         frame.setSize(800, 600);
         frame.setLayout(new BorderLayout());
         frame.add(road, BorderLayout.CENTER);
+        frame.add(light, BorderLayout.CENTER);
 
         south.setLayout(new GridLayout(1,3));
         south.add(start);
